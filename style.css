@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Strange Tales";
+    src: url('./Strange\ Tales.ttf');
+}
+body{
+    background-image: url('./header.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Strange Tales;
+    height: 100vh;
+    width: 100vw;
+}
+main{
+    max-width: 1000px;
+    height: 100%;
+    margin: 0px auto;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.705);
+    text-align: center;
+}
+.intro{
+}
+h1{
+    font-size: 4rem;
+    color: #e8234d;
+}
+p{
+    margin-top: 50px;
+    color: #152c77;
+    font-size: 1.5rem;
+}
+@media screen and (min-width: 1024px) {
+    main{
+        background: none;
+        max-width: 400px;
+        position: absolute;
+        right: 6%;
+        padding-top: 30px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    main{
+        background: none;
+        max-width: 400px;
+        position: absolute;
+        right: 12%;
+        padding-top: 50px;
+    }
+}
