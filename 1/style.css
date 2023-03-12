@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Bebas Neue";
+    src: url('./fonts/bebasneue-book-webfont.woff');
+}
+body{
+    background-image: url('../header.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+main{
+    background: #2b2a309f;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+    margin: 0 auto;
+}
+.container{
+    width: 300px;
+    height: 300px;
+    background: #000000;
+    box-shadow: -5px 14px 44px #000000, 5px -16px 50px rgba(255, 255, 255, 0.15);
+    border-radius: 100%;
+    text-align: center;
+    margin: 100px auto;
+}
+.time-circle{
+    width: 300px;
+    height: 300px;
+    /* background: #910A0A; */
+    background: radial-gradient(43.34% 55.31% at 93.34% 44.69%, #000000 0%, #910A0A 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info-circle{
+    background: radial-gradient(71.4% 71.4% at 51.7% 28.6%, #3A393F 0%, #17171A 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    box-shadow: inset 0px 0px 114px rgba(0, 0, 0, 0.45);
+    width: 285px;
+    height: 285px;
+    border-radius: 100%;
+    padding-top: 50px;
+}
+.info{
+    background: transparent;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.time{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 120px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #D5D8E1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+button{
+    border: transparent;
+    outline: transparent;
+}
+.status{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.6em;
+    background: linear-gradient(180deg, #FFFFFF 0%, #D5D8E1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 44px;
+}
+#settings{
+    background: transparent;
+}
+#settings img{
+    width: 24px;
+    height: 24px;
+}
+#stopBtn{
+    display: none;
+}
