@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 body{
     background-color: #EFF0F6;
@@ -43,15 +44,6 @@ main{
     overflow:hidden;
     position: relative;
 }
-
-.offcanvas{
-    width: 370px !important;
-    border-radius: 20px;
-    margin: 0 auto;
-}
-.offcanvas-header{
-    border-radius: 25px 25px 0 0;
-}
 h1,h2{
     font-family: 'Poppins';
     font-style: normal;
@@ -60,13 +52,14 @@ h1,h2{
     color: #000000;
     margin: 0;
 }
-.header{
+.header, .offcanvas-header{
     padding: 25px;
     background: #FFFFFF;
     box-shadow: 1px 1px 5px #C7CBE3;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-height: 88px;
 }
 .header button{
     width: 35px;
@@ -78,6 +71,11 @@ h1,h2{
 .header button svg{
     fill: rgb(228, 201, 50);
 }
+.badge{
+    position: absolute;
+    background: #6B00F5;
+
+}
 .menu__items{
     height: 550px;
     margin-top: 10px;
@@ -88,7 +86,7 @@ h1,h2{
     margin: 40px 0 0 30px;
     background: rgba(122, 179, 243, 0.2);
     border-radius: 20px 0 0 20px;
-    padding: 10px 10px 20px;
+    padding: 10px 10px 22px;
     position: relative;
 }
 .item__description{
@@ -127,23 +125,67 @@ h1,h2{
     padding: 4px 18px;
     gap: 10px;
     width: 140px;
-    height: 40px;
+    height: 34px;
     background: #6B00F5;
     border-radius: 20px;
     border: none;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 24px;
     color: #FFFFFF;
     position: absolute;
 }
 
+.offcanvas{
+    width: 370px !important;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+.offcanvas-header{
+    border-radius: 25px 25px 0 0;
+}
+.offcanvas-body{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 
 
-
-
-
+.calculator{
+    border-top:  5px solid #D7D7F9;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.expenditure{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+.calcMeta{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: right;
+    color: #000000;
+}
+h5{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+    color: #000000;
+}
+#total{
+    color: #6B00F5;
+    font-size: 34px;
+}
 
 
 
@@ -154,6 +196,9 @@ h1,h2{
     }
 }
 @media screen and (min-width: 768px) {
+    main{
+        gap: 5%;
+    }
     .main__container, .main__cart{
         width: 350px;
         height: 95vh;
