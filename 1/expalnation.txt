@@ -1,0 +1,19 @@
+This is a JavaScript code for a simple countdown timer with a circular progress bar. It allows the user to set the countdown time in minutes and seconds, start and stop the countdown, and reset the values. The circular progress bar represents the progress of the countdown, and it changes its color as the countdown progresses.
+
+Here is a breakdown of the code:
+
+The variables progressBar, minElem, secElem, startStop, and setting are assigned to the corresponding HTML elements using querySelector.
+
+The variables minutes, seconds, progress, progressStart, progressEnd, speed, degTravel, toggleSettings, secRem, and minRem are initialized. minutes and seconds are set to the initial values of the minutes and seconds input fields. progress is set to null, which indicates that the countdown is not running. progressStart is set to 0, which represents the initial progress of the countdown. progressEnd is set to the total number of seconds in the countdown. speed is set to 1000, which represents the number of milliseconds between each update of the progress bar. degTravel is set to the number of degrees the progress bar should travel for each second of the countdown. toggleSettings is set to false, which indicates that the settings menu is not open. secRem and minRem are set to 0, which represents the remaining seconds and minutes in the countdown.
+
+The progressTrack function is called every speed milliseconds to update the progress of the countdown. It increments progressStart, calculates the remaining minutes and seconds using the progressEnd and progressStart variables, updates the HTML elements for the minutes and seconds, and updates the background color of the progress bar using a conic-gradient CSS property. If the countdown has finished, the progress bar is set to the completed color, the progress interval is cleared, and the progressStart variable is reset.
+
+The startStopProgress function is called when the user clicks the start/stop button. If progress is null, it means the countdown is not running, so the function starts the countdown by calling setInterval with progressTrack and speed as arguments. If progress is not null, it means the countdown is running, so the function stops the countdown by calling clearInterval, resets progressStart to 0, and resets the background color of the progress bar.
+
+The resetValues function is called when the user clicks the reset button or when the minutes or seconds input fields lose focus. It stops the countdown if it is running, resets the minutes and seconds variables to their initial values, sets toggleSettings to false, disables the minutes and seconds input fields, resets the progress variables to their initial values, and resets the background color of the progress bar.
+
+The startStop button is assigned an onclick event listener that toggles the start/stop functionality of the countdown.
+
+The setting button is assigned an onclick event listener that toggles the settings menu. If the menu is open, it calls resetValues to reset the values.
+
+The minElem and secElem input fields are assigned onblur event listeners that call resetValues when they lose focus. This allows the user to reset the countdown if they accidentally enter an invalid value.
