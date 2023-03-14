@@ -6,6 +6,9 @@
 body{
     background-color: #EFF0F6;
 }
+::-webkit-scrollbar{
+    display: none;
+}
 .bg__left{
     position: absolute;
     left: 0;
@@ -28,48 +31,76 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 20px;
     z-index: 20;
 }
 .main__container, .main__cart{
     width: 375px;
-    height: 95vh;
+    height: 100vh;
     background: #FFFFFF;
     box-shadow: 0px 0px 70px #C7CBE3;
-    border-radius: 25px;
-    padding-top: 40px;
-    padding-bottom: 10px;
-    overflow: hidden;
+    padding-bottom: 25px;
+    overflow:hidden;
+    position: relative;
 }
 
-.header{
+.offcanvas{
+    width: 370px !important;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+.offcanvas-header{
+    border-radius: 25px 25px 0 0;
+}
+h1,h2{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
-    line-height: 48px;
     color: #000000;
-    padding-left: 40px;
-    background: white;
+    margin: 0;
+}
+.header{
+    padding: 25px;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 5px #C7CBE3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header button{
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border: none;
+    outline: transparent;
+}
+.header button svg{
+    fill: rgb(228, 201, 50);
 }
 .menu__items{
+    height: 550px;
     margin-top: 10px;
+    margin-bottom: 20px;
+    overflow-y: scroll;
 }
 .menu-item{
     margin: 40px 0 0 30px;
     background: rgba(122, 179, 243, 0.2);
     border-radius: 20px 0 0 20px;
-    padding: 25px 25px 22px 25px;
+    padding: 10px 10px 20px;
+    position: relative;
 }
 .item__description{
     display: grid;
-    gap: .8rem;
+    gap: .5rem;
+    padding: 0;
 }
 .itemImg{
     position: absolute;
-    width: 150px;
-    height: 150px;
-    transform: translateX(-50px) translateY(-50px);
+    width: 130px;
+    height: 130px;
+    transform: translateX(-40px) translateY(-35px);
 }
 .item__name{
     font-family: 'Poppins';
@@ -84,7 +115,7 @@ main{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 26px;
     line-height: 32px;
     color: #000000;
     margin: 0;
@@ -105,4 +136,26 @@ main{
     line-height: 24px;
     color: #FFFFFF;
     position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 425px) {
+    .main__container, .main__cart{
+        border-radius: 25px;
+        height: 98vh;
+    }
+}
+@media screen and (min-width: 768px) {
+    .main__container, .main__cart{
+        width: 350px;
+        height: 95vh;
+    }
 }
