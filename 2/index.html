@@ -27,9 +27,6 @@
                 <h1>Our Menu</h1>
                 <div>
 
-                    <button class="btn">
-                        <span class="badge" id="badgeCounter">12</span>
-                    </button>
                     <button title="Your cart" type="button" role="button" class="d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#Cart__container" aria-controls="Cart__container">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                               <path d="M96 0c11.5 0 21.4 8.19 23.6 19.51L121.1 32h420.7c20.3 0 36.5 20.25 30.8 40.66l-54 192.04c-3.9 13.8-16.5 23.3-30.8 23.3H170.7l9.2 48H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H159.1c-10.6 0-20.5-8.2-22.7-19.5L76.14 48H24C10.75 48 0 37.25 0 24S10.75 0 24 0h72zm32 464c0-26.5 21.5-48 48-48s48 21.5 48 48-21.5 48-48 48-48-21.5-48-48zm384 0c0 26.5-21.5 48-48 48s-48-21.5-48-48 21.5-48 48-48 48 21.5 48 48z"/>
@@ -39,61 +36,9 @@
 
             </div>
 
-            <div class="menu__items">
-
-                <div class="menu-item row">
-                    <div class="item__img col-5">
-                        <img src="./images/plate__french-fries.png" alt="Food item" class="itemImg img-fluid">
-                    </div>
-                    <div class="item__description col">
-                        <p class="item__name">French Fries with Ketchup</p>
-                        <h3 class="item__price">$ <span>2.23</span></h3>
-
-                        <div>
-                            <button class="item__button">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item row">
-                    <div class="item__img col-5">
-                        <img src="./images/plate__bacon-eggs.png" alt="Food item" class="itemImg img-fluid">
-                    </div>
-                    <div class="item__description col">
-                        <p class="item__name">Bacon and Eggs</p>
-                        <h3 class="item__price">$ <span>1.83</span></h3>
-
-                        <div>
-                            <button class="item__button">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item row">
-                    <div class="item__img col-5">
-                        <img src="./images/plate__chicken-salad.png" alt="Food item" class="itemImg img-fluid">
-                    </div>
-                    <div class="item__description col">
-                        <p class="item__name">Delicious Chicken Salad</p>
-                        <h3 class="item__price">$ <span>3.23</span></h3>
-
-                        <div>
-                            <button class="item__button">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item row">
-                    <div class="item__img col-5">
-                        <img src="./images/plate__fish-sticks-fries.png" alt="Food item" class="itemImg img-fluid">
-                    </div>
-                    <div class="item__description col">
-                        <p class="item__name">Fish sticks</p>
-                        <h3 class="item__price">$ <span>2.23</span></h3>
-
-                        <div>
-                            <button class="item__button">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item row">
+            <div id="menuItem" class="menu__items">
+                <!-- Template of food items -->
+                <!-- <div class="menu-item row">
                     <div class="item__img col-5">
                         <img src="./images/plate__ravioli.png" alt="Food item" class="itemImg img-fluid">
                     </div>
@@ -105,9 +50,7 @@
                             <button class="item__button">Add to Cart</button>
                         </div>
                     </div>
-                </div>
-
-
+                </div> -->
 
             </div>
         </section>
@@ -115,18 +58,25 @@
 
         <section class="offcanvas offcanvas-start" tabindex="-1" id="Cart__container" aria-label="Your cart">
             <div class="offcanvas-header header">
-                <h2 class="offcanvas-title" id="staticBackdropLabel">Your Cart</h2>
+                <div class="d-flex">
+                    <h2 class="offcanvas-title" id="staticBackdropLabel">Your Cart</h2>
+                    <button type="button" class="btn" title="Cart quantity" title="Cart quantity">
+                        <span class="badge" id="badgeCounter"></span>
+                    </button>
+                </div>
                 <button type="button" class="btn-close d-md-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <div class="cart-body">
-                    <div>
-                        <!-- Add something to your cart! -->
-                    </div>
+                    <!-- <div>
+                        Add something to your cart!
+                    </div> -->
 
                     <div id="cartItems" class="cartItems">
+                        <div>Your cart is empty</div>
 
-                        <div class="cart-item row m-0">
+                        <!-- Template for cart item -->
+                        <!-- <div class="cart-item row m-0">
                             <div class="col-3 p-0 cart-img-counter">
                                 <div class="inner-cart-img-counter">
                                     <img src="./images/plate__french-fries.png" alt="Food" class="img-fluid">
@@ -146,64 +96,22 @@
                                 </div>
                             </div>
 
-                        </div>
-                        <div class="cart-item row m-0">
-                            <div class="col-3 p-0 cart-img-counter">
-                                <div class="inner-cart-img-counter">
-                                    <img src="./images/plate__french-fries.png" alt="Food" class="img-fluid">
-                                    <span class="badge cart__item-badge">1</span>
-                                </div>
-                            </div>
-                            <div class="col pe-0">
-                                <div>
-                                    <p class="cart-item-desc m-0">French fries with ketchup</p>
-                                    <b>$ <span id="price">2.23</span></b>
-                                </div>
-                                <div class="evaluator mt-3 d-flex justify-content-between align-items-center">
-                                    <div class="controls d-flex align-items-center gap-3">
-                                        <button id="minus">-</button><span id="quantity">1</span><button id="plus">+</button>
-                                    </div>
-                                    <h6 class="item__price">$<span id="quantityPrice">2.23</span></h6>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="cart-item row m-0">
-                            <div class="col-3 p-0 cart-img-counter">
-                                <div class="inner-cart-img-counter">
-                                    <img src="./images/plate__french-fries.png" alt="Food" class="img-fluid">
-                                    <span class="badge cart__item-badge">1</span>
-                                </div>
-                            </div>
-                            <div class="col pe-0">
-                                <div>
-                                    <p class="cart-item-desc m-0">French fries with ketchup</p>
-                                    <b>$ <span id="price">2.23</span></b>
-                                </div>
-                                <div class="evaluator mt-3 d-flex justify-content-between align-items-center">
-                                    <div class="controls d-flex align-items-center gap-3">
-                                        <button id="minus">-</button><span id="quantity">1</span><button id="plus">+</button>
-                                    </div>
-                                    <h6 class="item__price">$<span id="quantityPrice">2.23</span></h6>
-                                </div>
-                            </div>
-
-                        </div>
+                        </div> -->
 
                     </div>
 
                     <div class="calculator" id="calculator">
                         <div class="expenditure">
                             <span class="calcMeta">Subtotal:</span>
-                            <h5>$ <span id="subtotal">0.00</span></h5>
+                            <h5>$ <span id="subtotal"></span></h5>
                         </div>
                         <div class="expenditure">
                             <span class="calcMeta">Tax:</span>
-                            <h5>$ <span id="tax">0.00</span></h5>
+                            <h5>$ <span id="tax">0.129</span></h5>
                         </div>
                         <div class="expenditure">
                             <span class="calcMeta">Total:</span>
-                            <h5>$ <span id="total">0.00</span></h5>
+                            <h5>$ <span id="total"></span></h5>
                         </div>
                     </div>
 
