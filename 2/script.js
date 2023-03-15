@@ -137,7 +137,7 @@ function displayCart(a){
                                 <button id="minus">-</button><span id="quantity">1</span><button id="plus">+</button>
                             </div>
                             <button class='delete' onclick=delElement(${(j++)})>🚮</button>
-                            <h6 class="item__price">$<span id="quantityPrice">2.23</span></h6>
+                            <h6 class="item__price">$<span id="quantityPrice">${price}</span></h6>
                         </div>
                     </div>
                 </div>
