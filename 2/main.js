@@ -1,3 +1,23 @@
+const mainCart = document.getElementById('Cart__container')
+const mediaQuery = window.matchMedia('(min-width: 768px)')
+
+function handleWindowChange(){
+    if(mediaQuery.matches){
+        mainCart.classList.remove('offcanvas', 'offcanvas-start')
+        mainCart.classList.add('main__cart')
+    }
+    else{
+        mainCart.classList.add('offcanvas', 'offcanvas-start')
+        mainCart.classList.remove('main__cart')
+    }
+}
+mediaQuery.addEventListener('change', handleWindowChange)
+
+handleWindowChange(mediaQuery)
+
+
+
+
 let Menu = document.getElementById("menuItem");
 
 let foodMenu = [
@@ -52,7 +72,7 @@ let foodMenu = [
 
 ]
 
-let basket = JSON.parse(localStorage.getItem("data")) || [];
+let basket = [];
 
 let generateMenu = () => {
     return (
@@ -75,7 +95,10 @@ let generateMenu = () => {
             `
         }).join('')
     )
-}; generateMenu()
+};
+
+generateMenu()
+
 
 
 let addToCart = (id) => {
@@ -92,7 +115,111 @@ let addToCart = (id) => {
         selectedItemButton.style.color = "#fff"
     }
     else { return }
+
+    generateCartItems()
     calculation()
-    // console.log(basket);
-    localStorage.setItem("data", JSON.stringify(basket));
+    TotalAmount();
 };
+
+
+let CartItems = document.getElementById('cartItems')
+
+
+let generateCartItems = () => {
+
+    if (basket.length === 0){
+        document.getElementById('cartItems').innerHTML = `<p>Add something to your cart!</p>`
+        document.getElementById('subtotal').innerText = `0.00`
+        document.getElementById('total').innerText = `0.00`
+    }
+    else {
+        return (CartItems.innerHTML = basket.map((x) => {
+            let { id, item } = x;
+            let {img, name, price} = foodMenu[id - 1]
+
+            return `
+            <div class="cart-item row m-0">
+                <div class="col-3 p-0 cart-img-counter">
+                    <div class="inner-cart-img-counter">
+                        <img src=${img} alt="Food" class="img-fluid">
+                        <span class="badge cart__item-badge">${item}</span>
+                    </div>
+                </div>
+                <div class="col pe-0">
+                    <div>
+                        <p class="cart-item-desc m-0">${name}</p>
+                        <b>$ <span id="price">${price}</span></b>
+                    </div>
+                    <div class="evaluator mt-3 d-flex justify-content-between align-items-center">
+                        <div class="controls d-flex align-items-center gap-3">
+                            <button id="minus" onclick="decrement(${id})">-</button>
+                            <span id="quantity">${item}</span>
+                            <button id="plus" onclick="increment(${id})">+</button>
+                        </div>
+                            <h6 class="item__price">$<span id="quantityPrice">${price *= item}</span></h6>
+                    </div>
+                </div>
+
+            </div>
+            `
+        }).join(''))
+    }
+};
+
+generateCartItems()
+
+
+let increment = (id) => {
+    let selectedItem = document.getElementById(`${id}`);
+    let search = basket.find((x) => x.id === selectedItem.id);
+    search.item += 1;
+    generateCartItems();
+    TotalAmount();
+};
+
+
+let decrement = (id) => {
+    let selectedItem = document.getElementById(`${id}`);
+    let search = basket.find((x) => x.id === selectedItem.id);
+    search.item -= 1;
+    generateCartItems();
+    TotalAmount();
+};
+
+
+let removeItem = (id) => {
+    let selectedItem = document.getElementById(`${id}`);
+    basket = basket.filter((x) => x.id !== selectedItem.id);
+    generateCartItems();
+    TotalAmount();
+};
+
+
+// Function that sums up the amount of items in the cart
+let calculation = () => {
+    let cartIcon = document.getElementById("badgeCounter");
+    cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
+
+    generateCartItems()
+};
+calculation()
+
+
+
+let TotalAmount = () => {
+    let tax = 0.120
+    if (basket.length !== 0){
+
+
+        let subtotal = basket.map((x) => {
+            let {item, id} = x
+            let {price} = foodMenu[id - 1]
+
+            return item * price
+        }).reduce((x,y) => x + y, 0)
+
+        document.getElementById('subtotal').innerText = subtotal.toFixed(2)
+        document.getElementById('total').innerText = (subtotal + tax).toFixed(2)
+    }
+};
+TotalAmount();
