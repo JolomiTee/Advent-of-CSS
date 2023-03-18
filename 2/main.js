@@ -16,8 +16,6 @@ mediaQuery.addEventListener('change', handleWindowChange)
 handleWindowChange(mediaQuery)
 
 
-
-
 let Menu = document.getElementById("menuItem");
 
 let foodMenu = [
@@ -100,7 +98,6 @@ let generateMenu = () => {
 generateMenu()
 
 
-
 let addToCart = (id) => {
     let selectedItem = document.getElementById(`${id}`)
     let selectedItemButton = selectedItem.querySelector('.item__button')
@@ -168,12 +165,12 @@ let generateCartItems = () => {
 
 generateCartItems()
 
-
 let increment = (id) => {
     let selectedItem = document.getElementById(`${id}`);
     let search = basket.find((x) => x.id === selectedItem.id);
     search.item += 1;
-    generateCartItems();
+    generateCartItems()
+    calculation()
     TotalAmount();
 };
 
@@ -181,8 +178,13 @@ let increment = (id) => {
 let decrement = (id) => {
     let selectedItem = document.getElementById(`${id}`);
     let search = basket.find((x) => x.id === selectedItem.id);
-    search.item -= 1;
-    generateCartItems();
+    if (search === undefined) return;
+    else if (search.item === 0) return;
+    else {
+        search.item -= 1;
+    }
+    generateCartItems()
+    calculation()
     TotalAmount();
 };
 
@@ -194,22 +196,17 @@ let removeItem = (id) => {
     TotalAmount();
 };
 
-
 // Function that sums up the amount of items in the cart
 let calculation = () => {
     let cartIcon = document.getElementById("badgeCounter");
     cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
-
     generateCartItems()
 };
 calculation()
 
-
-
 let TotalAmount = () => {
     let tax = 0.120
     if (basket.length !== 0){
-
 
         let subtotal = basket.map((x) => {
             let {item, id} = x
