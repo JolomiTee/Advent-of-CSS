@@ -9,10 +9,11 @@ function handleWindowChange(){
     }
     else{
         mainCart.classList.add('offcanvas', 'offcanvas-start')
-        mainCart.classList.remove('main__cart'
+        mainCart.classList.remove('main__cart')
     }
 }
 mediaQuery.addEventListener('change', handleWindowChange)
 
 handleWindowChange(mediaQuery)
+
 
