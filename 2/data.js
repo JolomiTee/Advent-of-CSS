@@ -1,4 +1,4 @@
-export default [
+const foodMenu = [
     {
         id: 1,
         img: './images/plate__bacon-eggs.png',
