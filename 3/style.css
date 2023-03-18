@@ -1,0 +1,30 @@
+body {
+    background: #37B2C3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bg-teal{
+    background: #37B2C3;
+}
+svg{
+    max-width: 100vw;
+    max-height: 100vh;
+}
+.white-keys{
+    fill: antiquewhite;
+}
+.white-keys:hover{
+    fill: #ffd200;
+}
+.black-keys{
+    fill: black;
+}
+.black-keys:hover{
+    fill: #f40082;
+}
+
