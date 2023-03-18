@@ -59,7 +59,7 @@ let generateMenu = () => {
         Menu.innerHTML = foodMenu.map((item) => {
             let {id, img, name, price} = item
             return `
-            <div id=product-${id} class="menu-item row">
+            <div id=${id} class="menu-item row">
                 <div class="item__img col-5">
                     <img src=${img} alt="Food item" class="itemImg img-fluid">
                 </div>
@@ -79,9 +79,8 @@ let generateMenu = () => {
 
 
 let addToCart = (id) => {
-    let selectedItem = document.getElementById(`product-${id}`)
+    let selectedItem = document.getElementById(`${id}`)
     let selectedItemButton = selectedItem.querySelector('.item__button')
-    console.log(selectedItemButton)
     let search = basket.find((x) => x.id === selectedItem.id);
 
     if (search === undefined) {
@@ -93,7 +92,7 @@ let addToCart = (id) => {
         selectedItemButton.style.color = "#fff"
     }
     else { return }
-
-    console.log(basket);
+    calculation()
+    // console.log(basket);
     localStorage.setItem("data", JSON.stringify(basket));
 };
