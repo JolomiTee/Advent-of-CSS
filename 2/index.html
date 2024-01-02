@@ -1,44 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+	<head>
+		<title>E-commerce Component</title>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
 
-<head>
-  <title>E-commerce Component</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+		<!-- Bootstrap CSS v5.2.1 -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
 
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
-</head>
+	<body>
+		<img src="./images/bg__left.svg" alt="background" class="bg__left" />
+		<img src="./images/bg__top-right.svg" alt="background" class="bg__top" />
+		<img src="./images/bg__btm-right.svg" alt="background" class="bg__btm" />
 
-<body>
-        <img src="./images/bg__left.svg" alt="background" class="bg__left">
-        <img src="./images/bg__top-right.svg" alt="background" class="bg__top">
-        <img src="./images/bg__btm-right.svg" alt="background" class="bg__btm">
+		<main>
+			<a type="button" role="button" href="../1/index.html" class="lg-nav-buttons  d-none d-md-flex" title="Previous project">
+				<img
+					src="images/chevron-bar-left.svg"
+					alt="Previous"
 
-    <main>
-        <section class="main__container">
-            <div class="header">
-                <h1>Our Menu</h1>
-                <div>
+				/>
+			</a>
 
-                    <button title="Your cart" type="button" role="button" class="d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#Cart__container" aria-controls="Cart__container">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                              <path d="M96 0c11.5 0 21.4 8.19 23.6 19.51L121.1 32h420.7c20.3 0 36.5 20.25 30.8 40.66l-54 192.04c-3.9 13.8-16.5 23.3-30.8 23.3H170.7l9.2 48H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H159.1c-10.6 0-20.5-8.2-22.7-19.5L76.14 48H24C10.75 48 0 37.25 0 24S10.75 0 24 0h72zm32 464c0-26.5 21.5-48 48-48s48 21.5 48 48-21.5 48-48 48-48-21.5-48-48zm384 0c0 26.5-21.5 48-48 48s-48-21.5-48-48 21.5-48 48-48 48 21.5 48 48z"/>
-                        </svg>
-                      </button>
-                </div>
+			<section class="main__container">
+				<div class="header">
+					<h1>Our Menu</h1>
+					<div
+						class="navigation d-flex align-items-center justify-content-center gap-3 d-md-none"
+					>
+						<a type="button" role="button" href="../1/index.html" class="sm-nav-buttons">
+							<img
+								src="images/chevron-bar-left.svg"
+								alt="Go back"
+								title="Previous project"
 
-            </div>
+							/>
+						</a>
+						<a
+							type="button"
+							role="button"
+							href="../3/index.html"
+							class="sm-nav-buttons"
+							><img
+								src="images/chevron-bar-right.svg"
+								alt="Next Project"
+								title="Next Challenge"
+						/></a>
+					</div>
+					<div>
+						<button
+							title="Your cart"
+							type="button"
+							role="button"
+							class="d-md-none"
+							type="button"
+							data-bs-toggle="offcanvas"
+							data-bs-target="#Cart__container"
+							aria-controls="Cart__container"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+								<path
+									d="M96 0c11.5 0 21.4 8.19 23.6 19.51L121.1 32h420.7c20.3 0 36.5 20.25 30.8 40.66l-54 192.04c-3.9 13.8-16.5 23.3-30.8 23.3H170.7l9.2 48H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H159.1c-10.6 0-20.5-8.2-22.7-19.5L76.14 48H24C10.75 48 0 37.25 0 24S10.75 0 24 0h72zm32 464c0-26.5 21.5-48 48-48s48 21.5 48 48-21.5 48-48 48-48-21.5-48-48zm384 0c0 26.5-21.5 48-48 48s-48-21.5-48-48 21.5-48 48-48 48 21.5 48 48z"
+								/>
+							</svg>
+						</button>
+					</div>
+				</div>
 
-            <div id="menuItem" class="menu__items">
-                <!-- Template of food items -->
-                <!-- <div class="menu-item row">
+				<div id="menuItem" class="menu__items">
+					<!-- Template of food items -->
+					<!-- <div class="menu-item row">
                     <div class="item__img col-5">
                         <img src="./images/plate__ravioli.png" alt="Food item" class="itemImg img-fluid">
                     </div>
@@ -51,32 +99,45 @@
                         </div>
                     </div>
                 </div> -->
+				</div>
+			</section>
 
-            </div>
-        </section>
-
-
-        <section class="offcanvas offcanvas-start" tabindex="-1" id="Cart__container" aria-label="Your cart">
-            <div class="offcanvas-header header">
-                <div class="d-flex">
-                    <h2 class="offcanvas-title" id="staticBackdropLabel">Your Cart</h2>
-                    <button type="button" class="btn" title="Cart quantity" title="Cart quantity">
-                        <span class="badge" id="badgeCounter"></span>
-                    </button>
-                </div>
-                <button type="button" class="btn-close d-md-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div class="cart-body">
-                    <!-- <div>
+			<section
+				class="offcanvas offcanvas-start"
+				tabindex="-1"
+				id="Cart__container"
+				aria-label="Your cart"
+			>
+				<div class="offcanvas-header header">
+					<div class="d-flex">
+						<h2 class="offcanvas-title" id="staticBackdropLabel">Your Cart</h2>
+						<button
+							type="button"
+							class="btn"
+							title="Cart quantity"
+							title="Cart quantity"
+						>
+							<span class="badge" id="badgeCounter"></span>
+						</button>
+					</div>
+					<button
+						type="button"
+						class="btn-close d-md-none"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="offcanvas-body">
+					<div class="cart-body">
+						<!-- <div>
                         Add something to your cart!
                     </div> -->
 
-                    <div id="cartItems" class="cartItems">
-                        <!-- <div>Your cart is empty</div> -->
+						<div id="cartItems" class="cartItems">
+							<!-- <div>Your cart is empty</div> -->
 
-                        <!-- Template for cart item -->
-                        <!-- <div class="cart-item row m-0">
+							<!-- Template for cart item -->
+							<!-- <div class="cart-item row m-0">
                             <div class="col-3 p-0 cart-img-counter">
                                 <div class="inner-cart-img-counter">
                                     <img src="./images/plate__french-fries.png" alt="Food" class="img-fluid">
@@ -97,52 +158,55 @@
                             </div>
 
                         </div> -->
+						</div>
 
-                    </div>
+						<div class="calculator" id="calculator">
+							<div class="expenditure">
+								<span class="calcMeta">Subtotal:</span>
+								<h5>$ <span id="subtotal"></span></h5>
+							</div>
+							<div class="expenditure">
+								<span class="calcMeta">Tax:</span>
+								<h5>$ <span id="tax">0.120</span></h5>
+							</div>
+							<div class="expenditure">
+								<span class="calcMeta">Total:</span>
+								<h5>$ <span id="total"></span></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-                    <div class="calculator" id="calculator">
-                        <div class="expenditure">
-                            <span class="calcMeta">Subtotal:</span>
-                            <h5>$ <span id="subtotal"></span></h5>
-                        </div>
-                        <div class="expenditure">
-                            <span class="calcMeta">Tax:</span>
-                            <h5>$ <span id="tax">0.120</span></h5>
-                        </div>
-                        <div class="expenditure">
-                            <span class="calcMeta">Total:</span>
-                            <h5>$ <span id="total"></span></h5>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-
-
-    </main>
-    <!-- <footer>
+			<a
+				type="button"
+				role="button"
+				href="../3/index.html"
+				class="lg-nav-buttons  d-none d-md-flex" title="Next Challenge"
+				><img
+					src="images/chevron-bar-right.svg"
+					alt="Next Project"
+			/></a>
+		</main>
+		<!-- <footer>
         <p>JolomiTee 2023 - Advent of CSS Challenges</p>
         <p>Made with ❤ & 🤭 </p>
     </footer> -->
 
+		<!-- Bootstrap JavaScript Libraries -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+			integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+			crossorigin="anonymous"
+		></script>
 
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+			integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+			crossorigin="anonymous"
+		></script>
 
-
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-    </script>
-
-
-    <script src="./main.js"></script>
-    <!-- <script src="./cart.js"></script> -->
-</body>
-
+		<script src="./main.js"></script>
+		<!-- <script src="./cart.js"></script> -->
+	</body>
 </html>

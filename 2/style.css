@@ -46,6 +46,27 @@ h1,h2{
     color: #000000;
     margin: 0;
 }
+.sm-nav-buttons {
+       background-color: rgba(122, 179, 243, 0.2);
+       border-radius: 8px;
+       box-shadow: inset;
+       padding: 5px;
+       max-width: 26px;
+       max-height: 26px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+.lg-nav-buttons {
+       background-color: rgba(122, 178, 243, 0.942);
+              border-radius: 8px;
+              box-shadow: inset;
+              padding: 5px;
+              width: 50px;
+              height: 50px;
+              justify-content: center;
+              align-items: center;
+}
 .header, .offcanvas-header{
     padding: 25px;
     background: #FFFFFF;
