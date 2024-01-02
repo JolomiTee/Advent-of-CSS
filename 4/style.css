@@ -3,11 +3,13 @@
 }
 body{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    gap: 32px;
 }
 #keyboard{
     width: 1198.9345703125px;
@@ -55,4 +57,22 @@ body{
 .space{
     display: flex;
     width: 100%;
+}
+.navigation {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       margin: 0 auto;
+       gap: 50px;
+}
+.lg-nav-buttons {
+       background-color: rgba(122, 178, 243, 0.942);
+       border-radius: 8px;
+       box-shadow: inset;
+       padding: 5px;
+       width: 50px;
+       height: 50px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
 }
